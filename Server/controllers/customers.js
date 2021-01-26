@@ -16,10 +16,11 @@ export const createCustomers = async (req,res) => {
     const customer = req.body;
 
     const newCustomer = new Customers(customer);
-    
+
     try {
 
         await newCustomer.save();
+
         res.status(201).json(newCustomer);
 
     } catch (error) {
